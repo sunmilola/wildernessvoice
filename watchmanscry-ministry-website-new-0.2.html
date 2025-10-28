@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Watchman's Cry • Voice in the Wilderness Ministries</title>
+  <meta name="description" content="Voice in the Wilderness Ministries — books and resources by Oladele Adeleye to help believers know God deeply, walk in His presence, and live from His love." />
+  <style>
+    :root{
+      --bg:#0f1115; --card:#151926; --muted:#9aa3b2; --text:#e9ecf1;
+      --brand:#8bc3ff; --brand-2:#bda8ff; --line:#263043; --btn:#1f8fff; --btn-2:#2d3750;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+    header.hero{
+      position:relative;padding:48px 0 28px;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(139,195,255,.22), transparent 60%),
+                  radial-gradient(900px 400px at 110% 10%, rgba(189,168,255,.18), transparent 60%);
+      border-bottom:1px solid var(--line);
+    }
+    header.hero h1{margin:0;font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:.3px}
+    header.hero p{margin:8px 0 0;color:var(--muted);max-width:680px}
+
+    nav.top{position:sticky;top:0;z-index:50;backdrop-filter: blur(8px);background: rgba(15,17,21,.6);border-bottom:1px solid var(--line)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand-badge{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#001223;font-weight:900}
+    ul.menu{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+    ul.menu a{color:var(--muted)}
+    ul.menu a:hover{color:#fff;text-decoration:underline}
+
+    .banner{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(90deg, rgba(139,195,255,.08), rgba(189,168,255,.08))}
+    .banner .container{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:10px 0}
+    .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(139,195,255,.15);color:#dff0ff;border:1px solid rgba(139,195,255,.35);padding:6px 10px;border-radius:999px;font-size:13px}
+
+    section{padding:48px 0}
+    h2{margin:0 0 12px;font-size:clamp(22px,3vw,28px)}
+    p.lead{color:var(--muted);max-width:800px}
+    .grid{display:grid;gap:18px}
+    @media (min-width: 900px){
+      .grid-2{grid-template-columns:1.2fr .8fr}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+      .grid-4{grid-template-columns:repeat(4,1fr)}
+    }
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+    .card.pad{padding:18px}
+    .list{display:grid;gap:12px}
+    .muted{color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;border:1px solid transparent;background:var(--btn);color:#001223;font-weight:700;padding:10px 14px}
+    .btn:hover{filter:brightness(1.08)}
+    .btn.secondary{background:var(--btn-2);color:#e3ebff;border:1px solid var(--line)}
+    .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+    .row{display:flex;gap:12px;flex-wrap:wrap}
+    .sr-only{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+
+    /* catalogue cards */
+    .book-card{overflow:hidden;display:grid;grid-template-columns:110px 1fr;gap:14px}
+    .book-cover{width:110px;aspect-ratio:3/4;background:#0b0e14;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+    .book-cover img{width:100%;height:100%;object-fit:cover}
+    .book-title{margin:0;font-size:16px;font-weight:700}
+    .book-series{font-size:12px;color:var(--muted);margin-bottom:6px}
+    .book-summary{font-size:14px;color:var(--muted)}
+    @media (min-width: 700px){.book-card{grid-template-columns:140px 1fr}.book-cover{width:140px}}
+
+    /* search */
+    .search{display:flex;gap:10px;align-items:center}
+    .search input{width:100%;background:#0b0e14;border:1px solid var(--line);color:var(--text);padding:12px 14px;border-radius:12px}
+
+    .badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#d8e7ff;background:rgba(139,195,255,.12);border:1px solid rgba(139,195,255,.35);padding:6px 10px;border-radius:999px}
+
+    footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+
+    .author{display:grid;gap:18px}
+    @media (min-width: 900px){.author{grid-template-columns:220px 1fr}}
+    .author img{width:220px;height:260px;object-fit:cover;border-radius:14px;border:1px solid var(--line)}
+    .kicker{font-size:12px;letter-spacing:.12em;color:#b7c6ff;text-transform:uppercase}
+    .cta-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:14px}
+
+    /* journey timeline */
+    .timeline{display:grid;gap:16px}
+    .step{display:grid;gap:8px;border-left:2px solid var(--brand);padding-left:12px}
+    .ref{font-size:12px;color:#b7c6ff}
+
+    /* value table */
+    .value-grid{display:grid;gap:12px}
+    @media (min-width: 900px){.value-grid{grid-template-columns:repeat(3,1fr)}}
+    .value-card{border-radius:14px;border:1px solid var(--line);background:rgba(189,168,255,.06);padding:14px}
+
+    .note{font-size:12px;color:var(--muted)}
+
+    /* --- accordion catalogue --- */
+    .acc-controls{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 14px}
+    .acc-btn{background:var(--btn-2);color:#e3ebff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-weight:600;cursor:pointer}
+    .acc-btn:hover{filter:brightness(1.05)}
+    .acc{display:grid;gap:10px}
+    .acc-item{border:1px solid var(--line);border-radius:14px;background:var(--card);overflow:hidden}
+    .acc-header{display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 14px;background:rgba(139,195,255,.06);border:0;color:var(--text);text-align:left;cursor:pointer}
+    .acc-header .title{display:flex;align-items:center;gap:10px;font-weight:700}
+    .acc-header .count{font-size:12px;color:#b7c6ff}
+    .acc-header:focus{outline:2px solid var(--brand)}
+    .acc-panel{padding:12px 12px 14px;border-top:1px solid var(--line)}
+    .acc-panel[hidden]{display:none}
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Nav -->
+  <nav class="top">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="brand-badge">WV</span> <span>Voice in the Wilderness Ministries</span>
+      </div>
+      <ul class="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#journey">The Journey</a></li>
+        <li><a href="#caritas">Caritas</a></li>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#author">Author</a></li>
+        <li><a href="#faith">Beliefs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <h1>Watchman’s Cry</h1>
+      <p>A call to <strong>AWAKEN</strong> — prepare the way for the Lord</p>
+      <div class="cta-bar">
+        <a class="btn" href="#caritas">Discover The Caritas Experience</a>
+        <a class="btn secondary" href="#books">Explore Catalogue</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner">
+    <div class="container">
+      <span class="pill">Teaching & Formation</span>
+      <span class="muted" style="font-size:14px;">Helping believers know God deeply, walk in His presence, and live from His love.</span>
+    </div>
+  </div>
+
+  <main>
+    <!-- About Ministry -->
+    <section id="about">
+      <div class="container grid grid-2">
+        <div class="card pad">
+          <h2>About the Ministry</h2>
+          <p class="lead">
+            <strong>Voice in the Wilderness Ministries</strong> exists to help believers know God deeply and live from His love.
+            What began as <em>The Berean Adventure: A Journey into the Heart of God</em>—rooted in <span class="ref">Ephesians 1:17–19</span>—invited readers to seek revelation and intimacy with the Father.
+            Step by step, that pursuit grew into <em>The Caritas Experience</em>, a call to respond to love received with love returned.
+          </p>
+          <p>From knowing to loving, from information to transformation, the focus remains clear: foster intimacy with God through worship, prayer, and the Word—forming disciples who live each day from the fullness of His presence and grace.</p>
+          <div class="row" style="margin-top:8px">
+            <span class="badge">Scripture-rooted</span>
+            <span class="badge">Spirit-led</span>
+            <span class="badge">Practical & Pastoral</span>
+          </div>
+        </div>
+        <div class="card pad">
+          <h2>Mission</h2>
+          <ul class="list">
+            <li>Equip believers to move from information to transformation.</li>
+            <li>Foster intimacy with God through worship, prayer, and the Word.</li>
+            <li>Offer resources for individuals, families, and church leaders.</li>
+          </ul>
+          <div style="margin-top:12px" class="row">
+            <a class="btn" href="#journey">See the Journey</a>
+            <a class="btn ghost" href="#caritas">Caritas Overview</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Journey (Berean → Caritas) -->
+    <section id="journey">
+      <div class="container grid grid-2">
+        <div class="card pad">
+          <h2>The Journey</h2>
+          <p class="lead">From <strong>knowing</strong> to <strong>loving</strong> — a step-wise path resting on <span class="ref">Ephesians 1:17–19</span> and fulfilled in <span class="ref">Deuteronomy 6:5</span>.</p>
+          <div class="timeline">
+            <div class="step">
+              <strong>The Berean Adventure</strong>
+              <span class="muted">A journey into the heart of God (Eph 1:17–19) — revelation, hope, and the riches of His grace.</span>
+            </div>
+            <div class="step">
+              <strong>Formation in Practice</strong>
+              <span class="muted">Intimacy, obedience, and daily rhythms: from information to transformation.</span>
+            </div>
+            <div class="step">
+              <strong>The Caritas Experience</strong>
+              <span class="muted">From love received (<span class="ref">John 3:16</span>) to love returned (<span class="ref">Deut 6:5</span>) — a way of life.</span>
+            </div>
+          </div>
+        </div>
+        <div class="card pad">
+          <h2>What You’ll Find</h2>
+          <ul class="list">
+            <li>Clear, biblical teaching that leads to encounter.</li>
+            <li>Grace-driven practices for intimacy and obedience.</li>
+            <li>Reproducible tools for mentoring and multiplication.</li>
+          </ul>
+          <div style="margin-top:12px">
+            <a class="btn secondary" href="#books">Browse Related Books</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Caritas Experience -->
+    <section id="caritas">
+      <div class="container grid grid-2">
+        <div class="card pad">
+          <h2>The Caritas Experience</h2>
+          <p class="lead"><em>From Love Received to Love Returned.</em> A transformational discipleship journey helping believers move from knowing God’s love to loving Him back with their whole lives.</p>
+          <div class="row" style="margin:10px 0 16px">
+            <span class="badge">40-day Manifesto</span>
+            <span class="badge">His Story • The Way • Loving God</span>
+          </div>
+          <h3 style="margin:8px 0 6px;font-size:18px">Objective</h3>
+          <p class="muted">Close the gap between salvation and surrender; belief and belonging; being saved from and being saved for.</p>
+          <ul class="list">
+            <li>Rediscover the goal — God desires love, not performance.</li>
+            <li>Remember the reason — we love because He first loved us.</li>
+            <li>Relearn the way — daily rhythms of intimacy, obedience, joy.</li>
+            <li>Reignite the heart — first love by grace, not guilt.</li>
+            <li>Reproduce the life — mentor and multiply others.</li>
+          </ul>
+          <div class="row" style="margin-top:12px">
+            <a class="btn" href="#contact">Invite / Host</a>
+            <a class="btn ghost" href="#books">See Resources</a>
+          </div>
+        </div>
+        <div class="card pad">
+          <h2>Why It Matters</h2>
+          <div class="value-grid">
+            <div class="value-card">
+              <strong>For the Individual</strong>
+              <p class="muted">Move from head knowledge to heart transformation with a clear pathway from grace received to love returned.</p>
+            </div>
+            <div class="value-card">
+              <strong>For the Church / Group</strong>
+              <p class="muted">Unify around the Great Commandment; a scalable framework for renewal, mentoring, and leadership development.</p>
+            </div>
+            <div class="value-card">
+              <strong>For the Kingdom</strong>
+              <p class="muted">Restore credible witness through lived love; the gospel’s endgame is communion, not escape.</p>
+            </div>
+          </div>
+          <div style="margin-top:14px">
+            <p class="muted"><em>Short Summary:</em> The Caritas Experience is the culmination of the Berean journey — the bridge between Ephesians 1:17–19 and Deuteronomy 6:5 — guiding believers from revelation to relationship, from grace received to love expressed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalogue -->
+    <section id="books">
+      <div class="container">
+        <h2>Books</h2>
+        <p class="lead">Browse the complete catalogue. Use the search box to filter by title, series, or themes.</p>
+
+        <div class="search" style="margin:16px 0 12px;">
+          <label class="sr-only" for="q">Search books</label>
+          <input id="q" type="search" placeholder="Search books… (e.g., Caritas, Berean, Abundant Life, Majesty)" />
+          <button class="btn secondary" id="clearSearch" type="button">Clear</button>
+        </div>
+
+        <div class="acc-controls">
+          <button class="acc-btn" id="expandAll" type="button">Expand all</button>
+          <button class="acc-btn" id="collapseAll" type="button">Collapse all</button>
+        </div>
+
+        <div id="catalog" class="acc"></div>
+      </div>
+    </section>
+
+    <!-- Author -->
+    <section id="author">
+      <div class="container">
+        <h2>Author</h2>
+        <div class="author card pad">
+          <img src="OladeleAdeleye2.jpg" alt="Oladele Adeleye" />
+          <div>
+            <div class="kicker">Minister • Teacher • Spiritual Mentor</div>
+            <h3 style="margin:6px 0 10px;font-size:22px">Oladele Adeleye</h3>
+            <p class="lead">
+              Oladele’s passion is simple: to help people walk in the fullness of what they’ve received in Christ. His writing blends prophetic insight with pastoral care, inviting readers to encounter God personally and live from His love.
+            </p>
+            <p>For seven years he served in leadership with <strong>Bible Study Fellowship (BSF)</strong>, teaching Scripture and mentoring men in the San Francisco class — a class he helped revive after decades of dormancy, and which continues to flourish today. (Shared here for biographical context; BSF does not endorse external ministries.)</p>
+            <p>He holds a Bachelor of Science in Industrial Chemistry, a Postgraduate Diploma in Management Studies, and later earned a Bachelor of Divinity, deepening his theological understanding and lifelong commitment to Christian ministry.</p>
+            <div class="row" style="margin-top:10px">
+              <span class="badge">Knowing God</span>
+              <span class="badge">Walking in His Presence</span>
+              <span class="badge">Living Loved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statement of Faith (concise) -->
+    <section id="faith">
+      <div class="container grid grid-2">
+        <div class="card pad">
+          <h2>Statement of Faith</h2>
+          <ul class="list">
+            <li><strong>Scripture:</strong> The Bible is God-breathed, our final authority for faith and life.</li>
+            <li><strong>God:</strong> One God in three Persons — Father, Son, and Holy Spirit.</li>
+            <li><strong>Jesus Christ:</strong> Fully God and fully man; His death and resurrection secure our salvation.</li>
+            <li><strong>Salvation:</strong> By grace through faith, unto new life and lifelong discipleship.</li>
+            <li><strong>The Church:</strong> Called to love God and neighbor, making disciples of all nations.</li>
+          </ul>
+          <p class="note">A fuller statement can be provided upon request.</p>
+        </div>
+        <div class="card pad">
+          <h2>Invite / Partner</h2>
+          <p class="lead">Host <em>The Caritas Experience</em>, schedule teaching, or request resources for your church or group.</p>
+          <div class="row">
+            <a class="btn" href="#contact">Start a Conversation</a>
+            <a class="btn ghost" href="#caritas">Caritas Overview</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container grid grid-2">
+        <div class="card pad">
+          <h2>Contact</h2>
+          <p>For events, study resources, or distribution, get in touch:</p>
+          <p><a class="btn" href="mailto:timtatol@wildernessvoice.co.uk">timtatol@wildernessvoice.co.uk</a></p>
+        </div>
+        <div class="card pad">
+          <h2>Connect</h2>
+          <p class="lead">Invite, partner, or share the message.</p>
+          <div class="row">
+            <a class="btn secondary" href="#books">Explore Books</a>
+            <a class="btn ghost" href="#about">About the Ministry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Voice in the Wilderness Ministries • “You were not just saved from something — you were saved for Someone.”</p>
+    </div>
+  </footer>
+
+  <!-- Data + Renderer -->
+  <script>
+    const BOOKS = [
+      /* =======================
+       *  BEREAN ADVENTURE
+       * ======================= */
+      { series: "The Berean Adventure", title: "Berean Adventure: Journey Essentials (Christianity 101)", summary: "A foundational guide to salvation, Scripture, prayer, worship, and discipleship—equipping new and growing believers to walk confidently with God.", cover: "covers/journey-essentials.png", links: [{ label: "Buy Paperback", url: "#" }, { label: "Study Guide (PDF)", url: "#" }] },
+      { series: "The Berean Adventure", title: "Berean Adventure: A Portrait of God", summary: "Explores God’s attributes across Scripture—holiness, love, justice, sovereignty, faithfulness—and shows how seeing God truly transforms worship and life.", cover: "covers/portrait-of-god.jpg", links: [{ label: "Amazon", url: "#" }] },
+      { series: "The Berean Adventure", title: "Berean Adventure: Knowing God – A Deep Dive", summary: "Moves believers from knowing about God to truly knowing Him through Scripture, story, and reflection—cultivating daily intimacy with His presence.", cover: "covers/knowing-god-deep-dive.jpg", links: [{ label: "Paperback", url: "#" }, { label: "Kindle", url: "#" }] },
+      { series: "The Berean Adventure", title: "Berean Adventure: Seeking God with All the Heart", summary: "A call to wholehearted pursuit through prayer, obedience, and perseverance, overcoming distraction and living with spiritual focus and joy.", cover: "covers/seeking-god-heart.jpg", links: [{ label: "Buy", url: "#" }] },
+      { series: "The Berean Adventure", title: "Berean Adventure: Cultivating a Heart After God", summary: "Practical formation for aligning life with God’s purposes—walking in the Spirit, embracing disciplines, and growing in Christlike character.", cover: "covers/heart-after-god.jpg", links: [{ label: "Buy", url: "#" }] },
+      { series: "The Berean Adventure", title: "Berean Adventure: Equipped to Thrive (Secrets of the Abundant Life)", summary: "Shows how to live Jesus’ abundant life—spiritually, emotionally, physically, and relationally—blending biblical wisdom with actionable practices.", cover: "covers/equipped-to-thrive.jpg", links: [{ label: "Buy", url: "#" }] },
+      { series: "The Berean Adventure", title: "Berean Adventure: A Journey into the Heart of God", summary: "Series capstone inviting mature believers to lead and mentor others from intimacy with God toward kingdom impact.", cover: "covers/journey-into-heart-of-god.jpg", links: [{ label: "Buy", url: "#" }] },
+      { series: "The Berean Adventure", title: "Berean Adventure: Daily Empowerment", summary: "Short, faith-centered reflections that nurture gratitude, resilience, and hope through God’s promises in everyday life.", cover: "covers/daily-empowerment.jpg", links: [{ label: "Buy", url: "#" }] },
+      { series: "The Berean Adventure", title: "Berean Adventure: Abiding in His Presence", summary: "A worship-focused devotional to help believers dwell in God’s presence through Scripture, prayer, and reflection.", cover: "covers/abiding-in-his-presence.jpg", links: [{ label: "Buy", url: "#" }] },
+      { series: "The Berean Adventure", title: "Berean Adventure: Contemplating the Essence of God", summary: "A biblical meditation on God’s nature and attributes, and how His character shapes the believer’s worldview and transformation.", cover: "covers/contemplating-essence.jpg", links: [{ label: "Buy", url: "#" }] },
+
+      /* =======================
+       *  CARITAS
+       * ======================= */
+      { series: "The Caritas Collection", title: "The Caritas Way", summary: "A lyrical invitation to rest in the Father’s embrace—receiving reckless mercy and responding with wholehearted love and surrender.", cover: "covers/caritas-way.jpg", links: [{ label: "Voiceover MP3", url: "#" }, { label: "Poster (Merch)", url: "#" }] },
+      { series: "The Caritas Collection", title: "Caritas: Loving God with All You’ve Got", summary: "Answers ‘Now that I’m saved—then what?’ by guiding believers from performance to devotion; salvation not as escape but transformation into wholehearted love.", cover: "covers/caritas-loving-god.png", links: [{ label: "Buy Book", url: "#" }, { label: "Group Guide (PDF)", url: "#" }] },
+
+      /* =======================
+       *  THE WAY TRILOGY
+       * ======================= */
+      { series: "The Way Trilogy", title: "The Tetelestai Arc: A Journey Through Redemption", summary: "Unpacks Jesus’ ‘It is finished,’ leading readers from striving to rest and freedom in His completed work.", cover: "covers/tetelestai-arc.jpg", links: [{ label: "Paperback", url: "#" }, { label: "Audiobook", url: "#" }] },
+      { series: "The Way Trilogy", title: "Perissos Life", summary: "Explores Jesus’ promise of abundant life and how God’s design for fullness transforms every dimension of our lives.", cover: "covers/perissos-life.jpg", links: [{ label: "Buy", url: "#" }] },
+      { series: "The Way Trilogy", title: "Aionios Way", summary: "Culmination of the trilogy—an invitation into unbroken communion where God’s presence becomes the atmosphere of life.", cover: "covers/aionios-way.jpg", links: [{ label: "Preorder", url: "#" }] },
+
+      /* =======================
+       *  STANDALONE
+       * ======================= */
+      { series: "Standalone", title: "His Presence", summary: "A testimony-driven invitation to move from theology to encounter—discovering the God who lives within.", cover: "covers/his-presence.png", links: [{ label: "Buy", url: "#" }] },
+      { series: "Standalone", title: "Whose Report Shall We Believe?", summary: "An accessible exploration of truth and worldviews, presenting a thoughtful case for the coherence of biblical reality.", cover: "covers/whose-report.png", links: [{ label: "Buy", url: "#" }] },
+      { series: "Standalone", title: "The Spiritual Signature: Signed, Sealed and Delivered", summary: "Traces God’s ‘signature’ in history pointing to Jesus Christ, offering assurance and a lived identity grounded in Him.", cover: "covers/spiritual-signature.png", links: [{ label: "Buy", url: "#" }] },
+      { series: "Standalone", title: "Walking Edenward: Rediscovering Intimacy, Identity, and Mission in the Presence of God", summary: "Calls believers back to the simplicity of walking with God—recovering intimacy, identity, and purpose in His presence.", cover: "covers/walking-edenward.png", links: [{ label: "Buy", url: "#" }] },
+
+      /* =======================
+       *  KNOWING GOD SERIES
+       * ======================= */
+      { series: "Knowing God", title: "Knowing God: Beyond Knowledge", summary: "Guides readers from learning about God to living in relationship with Him—through story, reflection, and practical application.", cover: "covers/knowing-god-beyond-knowledge.jpg", links: [{ label: "Buy", url: "#" }] },
+      { series: "Knowing God", title: "Knowing God: Beholding the Majesty", summary: "A worship-centered journey into Scripture’s throne-room visions—awakening awe and reverence before God’s holiness.", cover: "covers/beholding-the-majesty.png", links: [{ label: "Buy", url: "#" }] },
+      { series: "Knowing God", title: "Knowing God: A Journey of Awe, Intimacy, and Transformation", summary: "A comprehensive framework balancing reverence, relationship, and daily practice for a lifelong pursuit of knowing God.", cover: "covers/knowing-god-journey.jpg", links: [{ label: "Buy", url: "#" }] },
+      { series: "Knowing God", title: "Exploring the Character of God", summary: "A clear study of God’s attributes—holiness, love, justice, mercy, wisdom—and how knowing Him reshapes life and worship.", cover: "covers/exploring-character-of-god.png", links: [{ label: "Buy", url: "#" }] },
+      { series: "Knowing God", title: "Discovering Purpose", summary: "Moves believers beyond routine religion into a surrendered, Christ-centered life—living for Christ, not merely as a Christian.", cover: "covers/discovering-purpose.jpg", links: [{ label: "Buy", url: "#" }, { label: "Merch: Tee", url: "#" }] }
+    ];
+
+    /* ---------- renderer ---------- */
+    const catalog = document.getElementById("catalog");
+    const q = document.getElementById("q");
+    const clearBtn = document.getElementById("clearSearch");
+    const expandAllBtn = document.getElementById("expandAll");
+    const collapseAllBtn = document.getElementById("collapseAll");
+
+    function linkButtons(links=[]) {
+      if(!links.length) return "";
+      return `<div class="row" style="margin-top:10px">
+        ${links.map(l => `<a class="btn" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join("")}
+      </div>`;
+    }
+
+    function bookCard(b){
+      const cover = b.cover ? `<img src="${b.cover}" alt="${b.title} cover">` : "";
+      return `
+        <article class="card pad book-card">
+          <div class="book-cover">${cover}</div>
+          <div>
+            <div class="book-series">${b.series}</div>
+            <h3 class="book-title">${b.title}</h3>
+            <p class="book-summary">${b.summary}</p>
+            ${linkButtons(b.links)}
+          </div>
+        </article>
+      `;
+    }
+
+    function groupBySeries(list){
+      const map = new Map();
+      list.forEach(b=>{
+        const key = b.series || "Other";
+        if(!map.has(key)) map.set(key, []);
+        map.get(key).push(b);
+      });
+      return map;
+    }
+
+    function accordionItem(series, items, expanded=false){
+      const id = `panel-${series.toLowerCase().replace(/\s+/g,'-').replace(/[^a-z0-9\-]/g,'')}`;
+      const count = items.length;
+      return `
+        <div class="acc-item" data-series="${series}">
+          <button class="acc-header" aria-expanded="${expanded}" aria-controls="${id}">
+            <span class="title">${series}</span>
+            <span class="count">${count} ${count===1?'title':'titles'}</span>
+          </button>
+          <div id="${id}" class="acc-panel" ${expanded?'':'hidden'}>
+            <div class="grid" style="gap:16px">
+              ${items.map(bookCard).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderAccordion(list, term=""){
+      const groups = groupBySeries(list);
+
+      const order = [
+        "The Berean Adventure",
+        "The Caritas Collection",
+        "The Way Trilogy",
+        "Knowing God",
+        "Standalone",
+        "Other"
+      ];
+
+      const sortedKeys = Array.from(groups.keys()).sort((a,b)=>{
+        const ia = order.indexOf(a), ib = order.indexOf(b);
+        if(ia>-1 && ib>-1) return ia-ib;
+        if(ia>-1) return -1;
+        if(ib>-1) return 1;
+        return a.localeCompare(b);
+      });
+
+      const isSearching = term && term.trim().length>0;
+
+      const html = sortedKeys.map(series=>{
+        const items = groups.get(series) || [];
+        const expanded = isSearching; // expand groups automatically when searching
+        return accordionItem(series, items, expanded);
+      }).join("");
+
+      catalog.innerHTML = html;
+
+      catalog.querySelectorAll(".acc-header").forEach(btn=>{
+        btn.addEventListener("click", ()=>{
+          const expanded = btn.getAttribute("aria-expanded")==="true";
+          btn.setAttribute("aria-expanded", String(!expanded));
+          const panel = document.getElementById(btn.getAttribute("aria-controls"));
+          if(panel) panel.toggleAttribute("hidden");
+        });
+      });
+    }
+
+    function filterBooks(list, term){
+      if(!term) return list;
+      const t = term.toLowerCase();
+      return list.filter(b =>
+        (b.title && b.title.toLowerCase().includes(t)) ||
+        (b.summary && b.summary.toLowerCase().includes(t)) ||
+        (b.series && b.series.toLowerCase().includes(t))
+      );
+    }
+
+    function render(list, term=""){
+      const filtered = filterBooks(list, term);
+
+      // render only matched items; groups with zero matches won't appear
+      renderAccordion(filtered, term);
+
+      if(!filtered.length){
+        catalog.innerHTML = `
+          <div class="card pad" style="text-align:center">
+            <p class="lead">No results found for “${term.replace(/</g,"&lt;").replace(/>/g,"&gt;")}”.</p>
+            <p class="muted">Try a different search term, or clear the search.</p>
+          </div>
+        `;
+      }
+    }
+
+    q.addEventListener("input", () => render(BOOKS, q.value));
+    clearBtn.addEventListener("click", () => { q.value = ""; render(BOOKS); });
+
+    expandAllBtn.addEventListener("click", ()=>{
+      catalog.querySelectorAll(".acc-item").forEach(item=>{
+        const btn = item.querySelector(".acc-header");
+        const panel = item.querySelector(".acc-panel");
+        btn.setAttribute("aria-expanded","true");
+        panel.removeAttribute("hidden");
+      });
+    });
+
+    collapseAllBtn.addEventListener("click", ()=>{
+      catalog.querySelectorAll(".acc-item").forEach(item=>{
+        const btn = item.querySelector(".acc-header");
+        const panel = item.querySelector(".acc-panel");
+        btn.setAttribute("aria-expanded","false");
+        panel.setAttribute("hidden","");
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    render(BOOKS);
+  </script>
+</body>
+</html>
